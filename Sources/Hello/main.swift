@@ -46,4 +46,40 @@ func rangeLength(start: Int, end: Int) -> Int {
    return end - start
 }
 print(rangeLength(start: 2, end: 7))
-// prints "5"
+
+/*func minMax(array: [Int]) -> (min: Int, max: Int) {*/
+   /*var currMin = array[0]*/
+   /*var currMax = array[0]*/
+   /*for value in array[1..<array.count] {*/
+      /*if value < currMin {*/
+        /*currMin = value*/
+      /*} else if value > currMax {*/
+         /*currMax = value*/
+      /*}*/
+   /*}*/
+  /*return (currMin, currMax)*/
+/*}*/
+/*print(minMax(array: [1, 2, 3, 4, -6, 11]))*/
+
+func minMax(array: [Int]) -> (min: Int, max: Int) {
+   var currMin = array[0]
+   var currMax = array[0]
+   for value in array[1..<array.count] {
+      if value < currMin {
+        currMin = value
+      } else if value > currMax {
+         currMax = value
+      }
+   }
+  return (currMin, currMax)
+}
+
+let bounds = minMax(array: [4, -4, 1, 88, 7, 42])
+print("min is \(bounds.min) and max is \(bounds.max)")
+
+
+func test(n1: Int, n2:Int) -> (a: Int, b: Int) {
+   return ((n1-n2), (n1+n2))
+}
+let tmp = test(n1: 8, n2: 3)
+print(tmp.b)
